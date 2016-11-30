@@ -1,0 +1,27 @@
+{
+  "name": "vuejs-essentials",
+  "version": "0.0.0",
+  "description": "\u0016Repositorio que contiene códigos, practicas y ejercicios, de varios cursos, tutoriales a cerca del framework de Vuejs https://vuejs.org/",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github-gabo/vuejs-essentials.git"
+  },
+  "keywords": [
+    "vuejs",
+    "javascript",
+    "es6"
+  ],
+  "author": "Gabriel Regalado Sanchez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/github-gabo/vuejs-essentials/issues"
+  },
+  "homepage": "https://github.com/github-gabo/vuejs-essentials#readme",
+  "devDependencies": {
+    "live-server": "^1.1.0"
+  }
+}

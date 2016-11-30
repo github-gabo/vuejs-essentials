@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Primeros pasos con Vue</title>
+		<link rel="icon" href="vue.png" type="image/x-icon">
+		<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+		<link href='assets/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+			.seen{
+				text-decoration: underline;
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<ul class="list-group">
+						<li v-for="film in films | orderBy 'name'" class="list-group-item film" v-bind:class="{'seen' : film.seen}" :data-id="film.id">
+							<button class="btn btn-primary btn-xs pull-left" v-on:click="toggleSeen(film)">Toggle</button>
+							<span>{{* film.name }}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--<script src="./node_modules/vue/dist/vue.js"></script>-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.js"></script>
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					films: [
+						{id: 4, name: 'The Phantom Menace', seen: false},
+						{id: 5, name: 'Attack of the Clones', seen: false},
+						{id: 6, name: 'Revenge of the Sith', seen: false},
+						{id: 1, name: 'A New Hope', seen: true},
+						{id: 2, name: 'The Empire Strikes Back', seen: true},
+						{id: 3, name: 'Return of the Jedi', seen: true},
+						{id: 7, name: 'The Force Awakens', seen: false}
+					]
+				},
+				methods: {
+					toggleSeen: function (film) {
+						film.seen = !film.seen
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
